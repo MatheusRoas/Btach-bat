@@ -1,0 +1,98 @@
+@echo off
+:menu
+title Batman do TI
+mode 110,24
+color a
+cls
+echo.
+echo %date%
+echo.
+echo Computador: %computername%        Usuario: %username%
+echo.                                                                          ````````````   
+echo ^+---------------------------------------------^+                    ```.----------------::--`` 
+echo ^|                Batman Do Ti                 ^|               `.-----......-+...+/......::::-:-``
+echo ^+---------------------------------------------^+             `-----/oys-.....:NsosNs......:ddhs+:/:/ 
+echo ^| 1.  VER QUANDO SEUS WIN. FOI INSTALADO      ^|           `::--+ymNMNo......+NNNNNd-------dNNNNNds:++.
+echo ^| 2.  ABRIR PAINEL DE CONTROLE                ^|          -/.-smNNMNNNm/-----yNNMMMNo:---/hNNNNNNNNNy:+/
+echo ^| 3.  ABRIR CALCULADORA                       ^|         .+.+mNNMMMNNNNNmhhhmMMMMMMMMNmmNNNNNNNNNNNNNm/o-
+echo ^| 4.  DESLIGAR MEU COMPUTADOR                 ^|         o.:NNNNNMMMMMNNNNNNMMMMMMMMMMMMMMMMMMNNNMMMMMy:+ 
+echo ^| 5.  SAIR                                    ^|         o-+NNNNNMMMMMNNNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMs::
+echo ^+---------------------------------------------^+         .s-mNNNNNNNNMNNNNNNMMMMMMMMMMMMMMMNmmNMMMMMMm/+   
+echo                                                           `++dNNNNNy+/+ymNyooyNMMMMNy+/+hms/:::hMMMNh+/`
+echo                                                              -+ydNNN:----:/---:/hNMm+:::::::::::hNds+/.  
+echo                                                                .:+yhy:-------::::sm/:::::::::::/o+/:` 
+echo                                                                  ``.::::::--::::::/::::::::/::::.``  
+echo                                                                       ```.-----:::::::----.``` 
+set /p opcao= Escolha uma opcao: 
+
+if %opcao% equ 1 goto opcao1
+if %opcao% equ 2 goto opcao2
+if %opcao% equ 3 goto opcao3
+if %opcao% equ 4 goto opcao4
+if %opcao% equ 5 goto exit
+if %opcao% equ 11 goto ntb
+
+:ntb
+cls
+echo ^+---------------------------------------------^+
+echo ^|         ***********DESCULPE***********      ^|
+echo ^+---------------------------------------------^+
+echo.
+echo Desculpe, mas ainda nao ha um conteudo aqui, favor contate o TI :D 
+echo.
+timeout /t 5
+goto menu
+cls
+
+:opcao1
+cls
+echo ^+--------------------------------------------------------------^+
+echo ^|                     System Info                              ^|
+echo ^+--------------------------------------------------------------^+
+echo ^|                                                              ^|
+      systeminfo | find /i "Original"
+echo ^|                                                              ^|
+echo ^+--------------------------------------------------------------^+
+echo.
+pause
+goto menu
+
+:opcao2
+cls
+echo ^+---------------------------------------------^+
+echo ^|            PAINEL DE CONTROLE              ^|
+echo ^+---------------------------------------------^+
+start control
+goto menu
+
+
+:opcao3
+cls
+echo ^+---------------------------------------------^+
+echo ^|                CALCULADORA                  ^|
+echo ^+---------------------------------------------^+
+start calc
+goto menu
+
+
+:opcao4
+cls
+echo ^+---------------------------------------------^+
+echo ^|            DESLIGAR MEU COMPUTADOR          ^|
+echo ^+---------------------------------------------^+
+echo.
+echo Multiplique os minutos por 60 - (exemplo 20 minutos 20x60 : 1200)
+echo.
+set /p opcao= Qual o tempo que deseja para que seja desliga seu computador? 
+echo.
+color 40
+mode 55,10
+cls
+echo Seu computador sera desliga em %opcao% segundos.
+echo.
+pause
+shutdown -s -t %opcao%
+goto menu
+
+:exit
+exit
