@@ -1,0 +1,33 @@
+mode 45,5
+color a
+title Carregando... 10%%
+echo.
+echo Carregando Aguarde...  =^>
+ping 127.0.0.1 -n 2 > nul&goto bar1
+::1
+:bar1
+cls
+title Carregando... 30%%
+echo.
+echo Carregando Aguarde...  ===^>
+ping 127.0.0.1 -n 2 > nul&goto bar3
+::3
+:bar3
+cls
+title Carregando... 70%%
+echo.
+echo Carregando Aguarde...  ========^>
+ping 127.0.0.1 -n 2 > nul&goto bar4
+::4
+:bar4
+cls
+title Carregando... 100%%
+echo.
+echo Carregando Aguarde...  ====================^>
+ping 127.0.0.1 -n 2 > nul&goto menu
+
+:menu
+cls
+color a
+pause
+exit
