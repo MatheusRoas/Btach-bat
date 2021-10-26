@@ -1,3 +1,4 @@
+@echo off
 mode 45,5
 color a
 title Carregando... 10%%
